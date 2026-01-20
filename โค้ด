@@ -1,0 +1,30 @@
+# 20/01/69
+
+FALL_ASLEEP_TIME = 15              
+SLEEP_CYCLE_LENGTH = 90
+
+wakeUpTime = input("เวลาที่ต้องการตืน: ")
+sleepCycles = int(input("จำนวนรอบที่ต้องการ"))
+
+hour , minute = wakeUpTime.split(":")
+wakeUpMinutes = int(hour) * 60 + int(minute)
+
+bedTimeMinutes = wakeUpMinutes - (sleepCycles * SLEEP_CYCLE_LENGTH) - FALL_ASLEEP_TIME
+
+if  bedTimeMinutes < 0:
+    bedTimeMinutes += 24 * 60
+
+    bedHour = bedTimeMinutes // 60
+    bedMinute = bedTimeMinutes % 60
+
+print("\nเวลาที่ควรเข้านอน: ")
+print(f"{bedHour : 02d} : {bedMinute : 02d}")
+
+# ผลลัพธ์
+เวลาที่ต้องการตืน: 07:30
+จำนวนรอบที่ต้องการ5
+
+เวลาที่ควรเข้านอน: 
+ 23 :  45
+
+แสตมป์ 11
